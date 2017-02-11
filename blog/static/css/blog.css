@@ -2,8 +2,10 @@ h1 a {
     color: #fca205;
     font-family: 'Roboto';
 }
+
 body {
     padding-left: 15px;
+    padding-right: 15px;
 }
 
 .page-header {
