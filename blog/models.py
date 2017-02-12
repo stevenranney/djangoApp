@@ -1,11 +1,13 @@
 from django.db import models
 from django.utils import timezone
+from colorfield.fields import ColorField
 
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
+    color = ColorField(default = '#8B4513')
     text = models.TextField()
-    created_date = models.DateTimeField(default = timezone.now)
+    movement_date = models.DateTimeField(blank = True, null = True)
     published_date = models.DateTimeField(blank = True, null = True)
 
     def publish(self):
@@ -14,3 +16,4 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
